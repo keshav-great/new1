@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Games Arcade</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="scanlines"></div>
+        <div class="hero-content">
+            <h1 class="glitch" data-text="RETRO ARCADE">RETRO ARCADE</h1>
+            <div class="arcade-machine">
+                <div class="screen">
+                    <div class="game-preview">
+                        <div class="pixel-art"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>INSERT COIN</span>
+            <div class="coin-slot"></div>
+        </div>
+    </section>
+
+    <!-- Games Section -->
+    <section class="games-section">
+        <h2 class="section-title">SELECT GAME</h2>
+        <div class="games-grid">
+            <div class="game-card" data-game="pacman">
+                <div class="game-screen">
+                    <div class="game-icon pacman">
+                        <div class="pacman-sprite"></div>
+                    </div>
+                </div>
+                <h3>PAC-MAN</h3>
+                <p class="game-year">1980</p>
+                <div class="game-controls">
+                    <span class="btn-a">A</span>
+                    <span>START</span>
+                </div>
+            </div>
+
+            <div class="game-card" data-game="tetris">
+                <div class="game-screen">
+                    <div class="game-icon tetris">
+                        <div class="tetris-block"></div>
+                    </div>
+                </div>
+                <h3>TETRIS</h3>
+                <p class="game-year">1984</p>
+                <div class="game-controls">
+                    <span class="btn-b">B</span>
+                    <span>START</span>
+                </div>
+            </div>
+
+            <div class="game-card" data-game="snake">
+                <div class="game-screen">
+                    <div class="game-icon snake">
+                        <div class="snake-preview"></div>
+                    </div>
+                </div>
+                <h3>SNAKE</h3>
+                <p class="game-year">1976</p>
+                <div class="game-controls">
+                    <span class="btn-a">A</span>
+                    <span>START</span>
+                </div>
+            </div>
+
+            <div class="game-card" data-game="asteroids">
+                <div class="game-screen">
+                    <div class="game-icon asteroids">
+                        <div class="asteroid-sprite"></div>
+                    </div>
+                </div>
+                <h3>ASTEROIDS</h3>
+                <p class="game-year">1979</p>
+                <div class="game-controls">
+                    <span class="btn-b">B</span>
+                    <span>START</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Arcade Cabinet Section -->
+    <section class="arcade-section">
+        <h2 class="section-title">ARCADE CLASSICS</h2>
+        <div class="arcade-cabinets">
+            <div class="cabinet" data-game="pong">
+                <div class="cabinet-screen">
+                    <div class="crt-effect">
+                        <div class="game-content">
+                            <div class="pong-preview">
+                                <div class="paddle left"></div>
+                                <div class="ball"></div>
+                                <div class="paddle right"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cabinet-controls">
+                    <div class="joystick"></div>
+                    <div class="buttons">
+                        <div class="button red"></div>
+                        <div class="button blue"></div>
+                    </div>
+                </div>
+                <h3>PONG</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- High Scores Section -->
+    <section class="highscores-section">
+        <h2 class="section-title">HIGH SCORES</h2>
+        <div class="score-table" id="scoreTable">
+            <div class="score-header">
+                <span>RANK</span>
+                <span>PLAYER</span>
+                <span>SCORE</span>
+            </div>
+            <div id="scoreRows">
+                <!-- Scores will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="retro-footer">
+        <div class="footer-content">
+            <p class="blink">INSERT COIN TO CONTINUE</p>
+            <p class="copyright"> 2024 RETRO ARCADE</p>
+        </div>
+    </footer>
+
+    <!-- Game Modal -->
+    <div id="gameModal" class="game-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">GAME TITLE</h2>
+                <button class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <canvas id="gameCanvas"></canvas>
+                <div id="gameOver" class="game-over hidden">
+                    <h3>GAME OVER</h3>
+                    <p>Final Score: <span id="finalScore">0</span></p>
+                    <button id="restartBtn">PLAY AGAIN</button>
+                </div>
+                <div id="startScreen" class="start-screen">
+                    <h3>PRESS START</h3>
+                    <p>Use arrow keys to play</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
